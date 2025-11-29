@@ -19,6 +19,7 @@ This project includes data ingestion, preprocessing, feature engineering, model 
 
 ##  Repository Structure
 
+```text
 housing_price_predictor/
 ├── .gitignore
 ├── README.md
