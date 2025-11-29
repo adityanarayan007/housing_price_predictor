@@ -75,6 +75,7 @@ git lfs pull # Download the full_pipeline.joblib file
 
 # 4. Install ALL dependencies (production + development tools)
 pip install -r requirements-dev.txt
+```
 2. Configuration and Data
 Place Data: Put your raw housing_raw.csv file into the data/raw/ directory.
 
@@ -83,18 +84,18 @@ Verify Configuration: Ensure that the feature lists and file paths in src/config
 🚀 Execution of the ML Pipeline
 To train the model, find the optimal hyperparameters, and evaluate performance, execute the orchestrator script:
 
-Bash
+```Bash
 
 # Must be run from the project root with the venv active
 
 python run_training.py
 This single command executes the entire complex sequence: Ingestion → Transformation → Optimization → Final Training → Evaluation.
-
+```
 🌐 Running the Prediction API
 The project uses FastAPI and Uvicorn to serve the final model.
 
 1. Start the Server
-Bash
+```Bash
 
 # Ensure venv is active
 uvicorn src.api.app:app --reload
@@ -129,7 +130,29 @@ example_input = {
 
 The API will return the predicted house price in USD.
 ```
+## 🐳 Deployment via Docker
 
-License
+The project is containerized using a multi-stage Docker build to ensure a small, efficient, and reproducible production environment. The model is pre-trained and loaded from the container's file system.
+
+### Local testing
+```Bash
+# Build the Docker image
+docker build -t house-predictor . --no-cache
+
+# Run the container (detached mode)
+docker run -d -p 8000:8000 house-predictor
+```
+
+Access the API documentation at http://localhost:8000/docs.
+
+### Deployment to Render
+
+Push to GitHub: Ensure the final Dockerfile and all code/artifacts are committed.
+
+Connect Render: In the Render Dashboard, create a new Web Service.
+
+Select Docker: Choose the Docker environment, connect your GitHub repository, and deploy.
+
+## License
 
 This project is licensed under the MIT License.
