@@ -1,5 +1,10 @@
+# --- Core ML Dependencies ---
 pandas
-flask
-joblib
 scikit-learn
-gunicorn
+joblib
+numpy # Generally needed by scikit-learn/pandas (good to include)
+
+# --- API and Serving Dependencies (Production Runtime) ---
+fastapi          # The web framework itself (The missing piece!)
+uvicorn          # The high-speed ASGI server used by Gunicorn
+gunicorn         # The robust WSGI server (worker manager) for production
