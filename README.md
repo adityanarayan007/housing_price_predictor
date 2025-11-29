@@ -22,35 +22,34 @@ This project includes data ingestion, preprocessing, feature engineering, model 
 housing_price_predictor/
 ├── .gitignore
 ├── README.md
-├── run_training.py          # 🏃 Orchestrates the entire pipeline
-├── setup.py                 # 📦 Enables package installation
+├── run_training.py # Orchestrates the entire pipeline
+├── setup.py # Enables package installation
 │
-├── artifacts/               # 💾 Stores all results and trained components
-│   ├── figures/             # Evaluation plots (e.g., RMSE comparison)
-│   ├── models/              # Final trained model pipeline (full_pipeline.joblib)
-│   ├── preprocessors/       # Fitted scalers and transformers (y_scaler.joblib, etc.)
-│   └── reports/             # Metric reports (evaluation_metrics.json, optimized_params.json)
+├── artifacts/ # Stores all results and trained components
+│ ├── figures/ # Evaluation plots (e.g., RMSE comparison)
+│ ├── models/ # Final trained model pipeline (full_pipeline.joblib)
+│ ├── preprocessors/ # Fitted scalers and transformers (y_scaler.joblib, etc.)
+│ └── reports/ # Metric reports (evaluation_metrics.json, optimized_params.json)
 │
-├── data/                    # 🗄️ Manages raw, interim, and final split data
-│   ├── processed/           # X_train.csv, y_test.csv, etc.
-│   └── raw/                 # housing_raw.csv
+├── data/ # Manages raw, interim, and final split data
+│ ├── processed/ # X_train.csv, y_test.csv, etc.
+│ └── raw/ # housing_raw.csv
 │
-├── notebooks/               # 📓 Jupyter notebooks for EDA and experimentation
+├── notebooks/ # Jupyter notebooks for EDA and experimentation
 │
-└── src/                     # 💻 Source Code Directory
-    ├── api/                 # FastAPI application and Pydantic schemas
-    │   ├── app.py           # FastAPI server logic
-    │   └── schemas.py       # Pydantic data validation model
-    ├── config.py            # ⚙️ Centralized configuration (paths, hyperparameters, features)
-    ├── data/                # Data loading and structural cleaning
-    │   └── data_ingestion.py 
-    ├── features/            # Feature engineering and transformation logic
-    │   └── feature_transformer.py
-    └── models/              # Model training, optimization, and evaluation
-        ├── evaluate_model.py
-        ├── optimize_model.py
-        └── train_model.py
-
+└── src/ # Source Code Directory
+├── api/ # FastAPI application and Pydantic schemas
+│ ├── app.py # FastAPI server logic
+│ └── schemas.py # Pydantic data validation model
+├── config.py # Centralized configuration (paths, hyperparameters, features)
+├── data/ # Data loading and structural cleaning
+│ └── data_ingestion.py
+├── features/ # Feature engineering and transformation logic
+│ └── feature_transformer.py
+└── models/ # Model training, optimization, and evaluation
+├── evaluate_model.py
+├── optimize_model.py
+└── train_model.py
 
 ---
 
