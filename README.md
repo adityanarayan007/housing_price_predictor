@@ -17,27 +17,39 @@ This project includes data ingestion, preprocessing, feature engineering, model 
 
 ---
 
-## Project Structure
+##  Repository Structure
 
 housing_price_predictor/
+├── .gitignore
+├── README.md
+├── run_training.py          # 🏃 Orchestrates the entire pipeline
+├── setup.py                 # 📦 Enables package installation
 │
-├── artifacts/ # Trained model, transformers, metadata
-├── data/ # Raw / interim / processed data
-├── notebooks/ # EDA and experimentation
-├── src/
-│ ├── data/ # ingestion
-│ ├── features/ # training & prediction pipelines
-│ ├── models/ # helper functions
-│ ├── inference/ # training & prediction pipelines
-│ ├── app/ # helper functions
-│ ├── exception.py
-│ ├── logger.py
-│ └── ...
+├── artifacts/               # 💾 Stores all results and trained components
+│   ├── figures/             # Evaluation plots (e.g., RMSE comparison)
+│   ├── models/              # Final trained model pipeline (full_pipeline.joblib)
+│   ├── preprocessors/       # Fitted scalers and transformers (y_scaler.joblib, etc.)
+│   └── reports/             # Metric reports (evaluation_metrics.json, optimized_params.json)
 │
-├── run_training.py # Runs the complete pipeline
-├── requirements.txt # Dependencies
-├── setup.py # Packaging configuration
-└── README.md # Documentation
+├── data/                    # 🗄️ Manages raw, interim, and final split data
+│   ├── processed/           # X_train.csv, y_test.csv, etc.
+│   └── raw/                 # housing_raw.csv
+│
+├── notebooks/               # 📓 Jupyter notebooks for EDA and experimentation
+│
+└── src/                     # 💻 Source Code Directory
+    ├── api/                 # FastAPI application and Pydantic schemas
+    │   ├── app.py           # FastAPI server logic
+    │   └── schemas.py       # Pydantic data validation model
+    ├── config.py            # ⚙️ Centralized configuration (paths, hyperparameters, features)
+    ├── data/                # Data loading and structural cleaning
+    │   └── data_ingestion.py 
+    ├── features/            # Feature engineering and transformation logic
+    │   └── feature_transformer.py
+    └── models/              # Model training, optimization, and evaluation
+        ├── evaluate_model.py
+        ├── optimize_model.py
+        └── train_model.py
 
 
 ---
