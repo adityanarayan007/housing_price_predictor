@@ -1,0 +1,12 @@
+Flask
+matplotlib
+numpy
+packaging
+pandas
+scikit-learn
+scipy
+seaborn
+gunicorn
+fastapi>=0.100.0    # For building the high-speed API
+uvicorn[standard]>=0.23.2 # For serving the FastAPI application
+pydantic>=2.0.0     # For defining the data schema/model

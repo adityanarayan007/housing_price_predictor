@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.env
+env/
+venv/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+htmlcov/
+
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# PyCharm
+.idea/
+
+# Git LFS pointer files (if used)
+*.lfs
+
+# Byte-compiled / packaging
+*.egg-info/
+dist/
+build/
+
+# VSCode
+.vscode/
+
+# Jupyter
+.ipynb_checkpoints
+*.ipynb
