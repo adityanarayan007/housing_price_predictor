@@ -51,7 +51,7 @@ housing_price_predictor/
 ├── evaluate_model.py
 ├── optimize_model.py
 └── train_model.py
-
+```
 ---
 
 ## ⚙️ Setup and Installation
@@ -128,7 +128,7 @@ example_input = {
 
 
 The API will return the predicted house price in USD.
-
+```
 
 License
 
